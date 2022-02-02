@@ -9,7 +9,7 @@
     </h2>
 
         <div v-if="canLogin" class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-            <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+            <Link v-if="$page.props.auth.user" :href="route('products.index')" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
                 Dashboard
             </Link>
 

@@ -15,4 +15,9 @@ class Product extends Model
         'status',
         'image'
     ];
+
+    public function getImageUrlAttribute()
+    {
+        return asset($this->attributes['image']);
+    }
 }

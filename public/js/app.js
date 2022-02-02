@@ -23900,7 +23900,7 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNod
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", {
   "class": "font-bold bg-gray-300 border-b-2"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   "class": "px-4 py-2"
 }, "ID"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   "class": "px-4 py-2"
@@ -23937,13 +23937,12 @@ var _hoisted_14 = {
 var _hoisted_15 = {
   "class": "px-4 py-2"
 };
-var _hoisted_16 = {
+var _hoisted_16 = ["src"];
+var _hoisted_17 = {
   "class": "px-4 py-2 font-extrabold"
 };
 
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Edit ");
-
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Delete");
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Edit ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
@@ -23973,11 +23972,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
       }, 8
       /* PROPS */
-      , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <select v-model=\"select\" style=\"margin-bottom:10px\">\n                            <option value=\"\">Select</option>\n                            <option value=\"\">Delete All</option>\n                        </select> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         onClick: _cache[0] || (_cache[0] = function () {
           return $options.deleteProduct && $options.deleteProduct.apply($options, arguments);
-        })
-      }, "Delete Selected"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", null, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.products.data, function (product) {
+        }),
+        "class": "inline-flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+      }, "Delete Selected")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <select v-model=\"select\" style=\"margin-bottom:10px\">\n                            <option value=\"\">Select</option>\n                            <option value=\"\">Delete All</option>\n                        </select> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", null, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.products.data, function (product) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
           key: product.id
         }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -23998,33 +23998,27 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         /* TEXT */
         ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(product.status), 1
         /* TEXT */
-        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(product.image), 1
-        /* TEXT */
-        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+        ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+          "data-original": "{{ product.image }}",
+          src: product.image,
+          height: "50",
+          width: "50",
+          alt: ""
+        }, null, 8
+        /* PROPS */
+        , _hoisted_16)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <img src=\"{{ product.image }}\" height=\"10\" width=\"10\"></td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <td class=\"px-4 py-2\">{{ product.image }}</td> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
           "class": "text-green-700",
           href: _ctx.route('products.edit', product.id)
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [_hoisted_17];
+            return [_hoisted_18];
           }),
           _: 2
           /* DYNAMIC */
 
         }, 1032
         /* PROPS, DYNAMIC_SLOTS */
-        , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-          onClick: _cache[2] || (_cache[2] = function ($event) {
-            return $options.destroy(_ctx.post.id);
-          }),
-          "class": "text-red-700"
-        }, {
-          "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [_hoisted_18];
-          }),
-          _: 1
-          /* STABLE */
-
-        })])]);
+        , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Link\n                                            @click=\"destroy(post.id)\"\n                                            class=\"text-red-700\"\n                                            >Delete</Link\n                                        > ")])]);
       }), 128
       /* KEYED_FRAGMENT */
       ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_pagination, {
@@ -24141,7 +24135,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["href"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])], 64
   /* STABLE_FRAGMENT */
-  ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n    <div class=\"mt-8 flex lg:mt-0 lg:flex-shrink-0\">\n      <div class=\"inline-flex rounded-md shadow\">\n        <a href=\"#\" class=\"inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700\">\n          Get started\n        </a>\n      </div>\n      <div class=\"ml-3 inline-flex rounded-md shadow\">\n        <a href=\"#\" class=\"inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50\">\n          Learn more\n        </a>\n      </div>\n    </div> ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /* <div class=\"relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0\">\n        <div v-if=\"canLogin\" class=\"hidden fixed px-6 py-4 sm:block\">\n            <Link v-if=\"$page.props.auth.user\" :href=\"route('dashboard')\" class=\"text-sm text-gray-700 underline\">\n                Dashboard\n            </Link>\n\n            <template v-else>\n                \n                <Link :href=\"route('login')\" class=\"text-xl shadow-black text-gray-700 underline\">\n                    Log in\n                </Link>\n\n                <Link v-if=\"canRegister\" :href=\"route('register')\" class=\"ml-4 text-xl text-gray-700 underline\">\n                    Register\n                </Link>\n            </template>\n        </div>\n\n      \n    </div> */ ")], 64
+  ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \n        <div class=\"mt-8 flex lg:mt-0 lg:flex-shrink-0\">\n        <div class=\"inline-flex rounded-md shadow\">\n            <a href=\"#\" class=\"inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700\">\n            Get started\n            </a>\n        </div>\n        <div class=\"ml-3 inline-flex rounded-md shadow\">\n            <a href=\"#\" class=\"inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50\">\n            Learn more\n            </a>\n        </div>\n        </div> ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /* <div class=\"relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0\">\n        <div v-if=\"canLogin\" class=\"hidden fixed px-6 py-4 sm:block\">\n            <Link v-if=\"$page.props.auth.user\" :href=\"route('dashboard')\" class=\"text-sm text-gray-700 underline\">\n                Dashboard\n            </Link>\n\n            <template v-else>\n                \n                <Link :href=\"route('login')\" class=\"text-xl shadow-black text-gray-700 underline\">\n                    Log in\n                </Link>\n\n                <Link v-if=\"canRegister\" :href=\"route('register')\" class=\"ml-4 text-xl text-gray-700 underline\">\n                    Register\n                </Link>\n            </template>\n        </div>\n\n      \n    </div> */ ")], 64
   /* STABLE_FRAGMENT */
   );
 }

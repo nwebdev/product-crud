@@ -19,7 +19,7 @@
                     Log in
                 </Link>
                 </div>
- <div class="ml-3 inline-flex rounded-md shadow">
+                <div class="ml-3 inline-flex rounded-md shadow">
                 <Link v-if="canRegister" :href="route('register')" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
                     Register
                 </Link>
@@ -27,21 +27,21 @@
             </template>
         </div>
 
-<!-- 
-    <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-      <div class="inline-flex rounded-md shadow">
-        <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
-          Get started
-        </a>
-      </div>
-      <div class="ml-3 inline-flex rounded-md shadow">
-        <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
-          Learn more
-        </a>
-      </div>
-    </div> -->
-  </div>
-</div>
+    <!-- 
+        <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+        <div class="inline-flex rounded-md shadow">
+            <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+            Get started
+            </a>
+        </div>
+        <div class="ml-3 inline-flex rounded-md shadow">
+            <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
+            Learn more
+            </a>
+        </div>
+        </div> -->
+    </div>
+    </div>
 
    <!-- /* <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
         <div v-if="canLogin" class="hidden fixed px-6 py-4 sm:block">

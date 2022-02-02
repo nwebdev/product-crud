@@ -6,6 +6,8 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
+
 
 class ProductController extends Controller
 {
@@ -18,7 +20,6 @@ class ProductController extends Controller
     {
 
         $products = Product::latest()->paginate(10);
-     
         return Inertia::render('Product/Index', ['products' => $products]);
     }
 
@@ -40,13 +41,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $productRequest = $request->all();
         $image_path = '';
         if ($request->hasFile('image')) {
-            $image_path = $request->file('image')->store('image', 'public');
+            $image_path = Storage::disk('localimage')->put('image', $request->file('image'));
+            $productRequest['image'] = $image_path;
         }
-
         Product::create(
-           $request->all()
+           $productRequest
         );
 
         return Redirect::route('products.index');
@@ -92,11 +94,13 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+        $productRequest = $request->all();
         $image_path = '';
         if ($request->hasFile('image')) {
-            $image_path = $request->file('image')->store('image', 'public');
+            $image_path = Storage::disk('localimage')->put('image', $request->file('image'));
+            $productRequest['image'] = $image_path;
         }
-        $product->update($request->all());
+        $product->update($productRequest);
     
         return Redirect::route('products.index');
     }

@@ -1,4 +1,4 @@
-## About Laravel
+## Steps for setup
 
 git clone https://github.com/nwebdev/product-crud.git
 
@@ -11,7 +11,9 @@ cp .env.example .env
 php artisan migrate
 
 sudo chmod -R 777 storage/*
+
 sudo chmod -R 777 public/image
+
 sudo chmod -R 777 bootstrap/cache
 
 php artisan key:generate

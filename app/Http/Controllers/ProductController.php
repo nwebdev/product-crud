@@ -41,7 +41,7 @@ class ProductController extends Controller
      */
 
     
-    public function productUpdate(Request $request)
+    public function productUpdate(\App\Http\Requests\ProductRequest $request)
     {
         try{
             $product = Product::find($request->id);

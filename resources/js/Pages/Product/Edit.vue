@@ -100,10 +100,10 @@ export default {
         BreezeAuthenticatedLayout,
         Head,
     },
-    //   props: {
-    //     product: Object,
-    //     errors: Object,
-    // },
+      props: {
+        product: Object,
+        errors: Object,
+    },
     setup(props) {
         const form = useForm({
             name: props.product.name,

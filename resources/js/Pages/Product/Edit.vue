@@ -15,6 +15,7 @@
                         <form @submit.prevent="submit">
                             <div>
 
+                                <input type="hidden" v-model="form.id" > 
                                 <label for="name">name</label>
                                 <input type="text" v-model="form.name" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 " />
                                 <div v-if="errors.name" class="font-bold text-red-600" > {{ errors.name }} </div>
@@ -106,18 +107,29 @@ export default {
     },
     setup(props) {
         const form = useForm({
+            id: props.product.id,
             name: props.product.name,
             price: props.product.price,
             upc: props.product.upc,
             status: props.product.status,
-            image: props.product.image
+            image: props.product.image,
+            // image: null
         });
 
         return { form };
     },
     methods: {
          submit() {
-            this.form.put(route("products.update", this.product.id));
+                if (this.$refs.photo) {
+                this.form.image = this.$refs.photo.files[0];
+            }
+
+console.log('ssss');
+            console.log(this.product.id);
+            // props.product.id
+            this.form.post(route("myproduct.update"));
+            // this.form.post(route("products.store"), this.product.id);
+            // this.form.put(route("products.update", this.product.id));
         },
          previewImage(e) {
             const file = e.target.files[0];

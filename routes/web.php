@@ -28,6 +28,7 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::post('products-update', [\App\Http\Controllers\ProductController::class, 'productUpdate'])->name('myproduct.update');
 Route::resource('products', \App\Http\Controllers\ProductController::class);
 Route::post('product-multi-delete/{id}', [\App\Http\Controllers\ProductController::class, 'delete_products'])->name('product-multi-delete');
 
